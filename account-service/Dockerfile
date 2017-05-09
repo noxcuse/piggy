@@ -1,5 +1,11 @@
 FROM maven:3-jdk-8
-MAINTAINER Alexander Lukyanchikov <sqshq@sqshq.com>
+MAINTAINER Adam De <developer@noxcuse.pl>
+
+WORKDIR /app
+
+# Add POM and source
+ADD pom.xml /app/pom.xml
+ADD src /app/src
 
 #BuildAppX
 RUN ["mvn", "clean", "package"]
