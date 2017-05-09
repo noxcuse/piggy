@@ -36,19 +36,4 @@ public class AccountController {
 	public Account createNewAccount(@Valid @RequestBody User user) {
 		return accountService.create(user);
 	}
-
-	@RequestMapping(path = "/", method = RequestMethod.POST)
-	public Account createNewAccount2(@Valid @RequestBody User user) {
-		return accountService.create(user);
-	}
-
-	@RequestMapping(path = "/", method = RequestMethod.POST)
-	public Account createNewAccount3(@Valid @RequestBody User user) {
-		return accountService.create(user);
-	}
-
-    @RequestMapping(path = "/", method = RequestMethod.POST)
-    public Account createNewAccount4(@Valid @RequestBody User user) {
-        return accountService.create(user);
-    }
 }
