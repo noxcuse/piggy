@@ -1,7 +1,7 @@
 FROM maven:3-jdk-8
 MAINTAINER Alexander Lukyanchikov <sqshq@sqshq.com>
 
-#Build
+#BuildApp
 RUN ["mvn", "clean", "package"]
 
 ADD ./target/account-service.jar /app/
