@@ -11,7 +11,7 @@ ADD src /app/src
 RUN ["mvn", "clean", "package"]
 
 #Run application
-ADD /app/target/account-service.jar ./autostop
+ADD /target/account-service.jar ./autostop
 CMD ["java", "-Xmx200m", "-jar", "/autostop/account-service.jar"]
 
 # Exposing microservice port
