@@ -8,11 +8,15 @@ ADD pom.xml /app/pom.xml
 ADD src /app/src
 
 #Build application
-CMD ["mvn", "clean", "package"]
-
+RUN ["mvn", "clean", "package"]
+CMD ["sh", "-c", "pwd"]
+CMD ["sh", "-c", "ls"]
 #Run application
 ADD /target/account-service.jar /app/autostop/account-service.jar
+CMD ["sh", "-c", "pwd"]
+CMD ["sh", "-c", "ls"]
 CMD ["java", "-Xmx200m", "-jar", "/app/autostop/account-service.jar"]
+
 
 # Exposing microservice port
 EXPOSE 6000
