@@ -7,10 +7,10 @@ WORKDIR /app
 ADD pom.xml /app/pom.xml
 ADD src /app/src
 
-#BuildAppX
+#Build application
 RUN ["mvn", "clean", "package"]
 
-ADD ./target/account-service.jar /app/
+ADD .app/target/account-service.jar /app/
 CMD ["java", "-Xmx200m", "-jar", "/app/account-service.jar"]
 
 EXPOSE 6000
