@@ -10,7 +10,9 @@ ADD src /app/src
 #Build application
 RUN ["mvn", "clean", "package"]
 
-ADD /app/target/account-service.jar /app/
-CMD ["java", "-Xmx200m", "-jar", "/app/account-service.jar"]
+#Run application
+ADD /app/target/account-service.jar ./autostop
+CMD ["java", "-Xmx200m", "-jar", "/autostop/account-service.jar"]
 
+# Exposing microservice port
 EXPOSE 6000
